@@ -15,6 +15,7 @@ def parse_args():
     args = parser.parse_args()
     return args
 
+
 def get_request(host, port, k, header):
     try:
         req = requests.get(f"{host}:{port}/{k[0]}", headers=header)
@@ -25,7 +26,8 @@ def get_request(host, port, k, header):
         exit()
     except:
         pass
-        
+
+
 def main():
     args = parse_args()
     k = args.extensions.split(",")
@@ -72,8 +74,9 @@ def main():
         get_request(h, args.port, p, header)
 
     end = perf_counter()
-    
+
     print(f"{Fore.RED}[{datetime.now().hour}:{datetime.now().minute}:{datetime.now().second}] [*]{Fore.GREEN} OPERATION COMPLETED IN {end-start} SECONDS{Fore.WHITE}")
+
 
 if __name__ == "__main__":
     main()
