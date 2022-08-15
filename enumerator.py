@@ -44,7 +44,7 @@ def get_request(host: str, port: int, files: List[str], header: Dict[str, str]) 
     except KeyboardInterrupt:
         exit()
     except:
-        pass
+        return
 
 
 def main() -> None:
